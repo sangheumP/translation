@@ -1,65 +1,75 @@
-# Language Reactor Quiz
+# 📘 Language Reactor Quiz
 
-📘 영어 자막 기반 학습용 퀴즈 프로그램입니다.  
-번역을 보고 영어 문장을 입력하면 유사도를 채점해줍니다.  
-즐겨찾기 및 단어장 기능을 통해 반복 학습이 가능합니다.
-
----
-
-## 📦 포함 파일
-
-| 파일명                | 설명                                 |
-|-----------------------|--------------------------------------|
-| `LanguageReactorQuiz.exe` | 실행 파일 (Python 없이 실행 가능)     |
-| `example.csv`         | 예제 자막 CSV                        |
-| `background.jpg`      | 홈 화면 배경 이미지                  |
+**영어 자막 기반 단어 학습 & 퀴즈 앱**  
+Language Reactor로 추출한 CSV 파일을 기반으로 퀴즈를 풀고 단어를 수집하고 복습할 수 있는 Python GUI 프로그램입니다.
 
 ---
 
-## 🚀 사용 방법
+## 🚀 시작하기
 
-1. `LanguageReactorQuiz.exe` 실행  
-2. `📁 CSV 불러오기` 버튼 클릭 → `example.csv` 선택  
-3. 퀴즈 시작
+### 1. 환경 설치
+Python 3.9 이상이 설치되어 있어야 합니다.
 
-> ⛔ 실행 후 CSV를 불러오기 전까지는 퀴즈가 시작되지 않습니다.
+```bash
+pip install -r requirements.txt
+```
 
----
+또는 직접 설치할 경우:
 
-## 📄 CSV 형식 설명
+```bash
+pip install ttkbootstrap pandas pillow
+```
 
-CSV 파일은 아래와 같은 두 열이 필수입니다:
+### 2. 실행
 
-- `Subtitle`: 원문 영어 자막  
-- `Human Translation`: 번역된 문장  
-
-```csv
-Subtitle,Human Translation
-I'm on my way.,가는 중이야.
-It's my favorite place.,여기가 내가 제일 좋아하는 곳이야.
+```bash
+python main.py
 ```
 
 ---
 
-## 🧠 기능 요약
+## 📂 구성 파일
 
-- 🔠 번역 → 영어 입력 → 유사도 점수 확인
-- ⭐ 즐겨찾기 / 📚 단어장 (자동 저장)
-- 🎨 테마, 정답 보기, 문제 랜덤 설정
-- 🔄 종료 시 자동 저장: `favorites.json`, `vocab.json`
-
----
-
-## 💡 팁
-
-- 정답이 궁금하면 `정답 보기 ON/OFF`를 눌러보세요.
-- 키워드를 클릭해 단어장에 추가하거나 제거할 수 있습니다.
-- 즐겨찾기나 단어는 더블클릭으로 삭제할 수 있습니다.
+| 파일명 | 설명 |
+|-------|------|
+| `main.py` | 프로그램 실행 파일 |
+| `background.jpg` | 홈 화면 배경 이미지 |
+| `example.csv` | 예제 자막 CSV 파일 (Subtitle, Human Translation 컬럼 필요) |
+| `favorites.json` | 즐겨찾기 자동 저장 파일 (앱 종료 시 생성됨) |
+| `vocab.json` | 단어장 자동 저장 파일 (앱 종료 시 생성됨) |
 
 ---
 
-## 🛠 제작 환경
+## 💡 기능
 
-- Python 3.9+
-- tkinter + ttkbootstrap
-- pandas, PIL, difflib
+- ✅ CSV 불러오기 (자막 + 번역)
+- ✅ 퀴즈 풀이 & 유사도 채점
+- ✅ 정답 단어 클릭 시 단어장 추가
+- ✅ 즐겨찾기 기능 (퀴즈 문제 저장)
+- ✅ 단어장 / 즐겨찾기 저장 및 삭제
+- ✅ 홈 화면 배경 이미지 및 테마 설정
+
+---
+
+## 📸 스크린샷
+
+| 홈 화면 | 퀴즈 화면 |
+|---|---|
+| ![home](./screenshot_home.png) | ![quiz](./screenshot_quiz.png) |
+
+---
+
+## 📝 예제 CSV 형식
+
+```csv
+Subtitle,Human Translation
+I love you,사랑해
+Where are you going?,어디 가?
+```
+
+---
+
+## 🛠 기타
+
+- `background.jpg`는 필수입니다. (없을 경우 오류 발생)
+- 단어장은 `vocab.json`, 즐겨찾기는 `favorites.json`에 자동 저장됩니다.

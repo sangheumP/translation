@@ -49,13 +49,6 @@ python main.py
 - ✅ 단어장 / 즐겨찾기 저장 및 삭제
 - ✅ 홈 화면 배경 이미지 및 테마 설정
 
----
-
-## 📸 스크린샷
-
-| 홈 화면 | 퀴즈 화면 |
-|---|---|
-| ![home](./screenshot_home.png) | ![quiz](./screenshot_quiz.png) |
 
 ---
 
